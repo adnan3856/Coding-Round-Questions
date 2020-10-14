@@ -10,8 +10,8 @@ public class NumberGame {
         System.out.println("4.Maximum guesses that would be provided will be 30");
         System.out.println("5.HAPPY GUESSING... ;)");
     }
-
-    public static boolean guessTheGame(int guess,int[] arr) {
+    
+    public static boolean guessTheGame(int guess,int[] arr,int num) {
         int guessRem, i = 2;
         int[] guessArray = new int[3];
         boolean numberPresent=false,runAgain=true;
@@ -22,7 +22,7 @@ public class NumberGame {
             guess = guess / 10;
         }
         if (Arrays.equals(guessArray, arr)) {
-            System.out.println("Yeeeeeeeeeeee...You Won!");
+            System.out.println("Yeeeeeeeeeeee...You Won!. The number was: "+num);
             runAgain= false;
         }
         else {
@@ -45,15 +45,15 @@ public class NumberGame {
         }
         return runAgain;
     }
-
-
+    
     public static void main(String[] args) {
         Scanner scan = new Scanner((System.in));
         int min = 100, max = 999, i = 2, rem, count = 0;
         int[] arr = new int[3];
         boolean guess = true;
         int number = (int) Math.floor(Math.random() * (max - min) + min);
-        System.out.println(number);
+        //System.out.println(number);
+        int generatedNumber=number;
         while (number > 0) {
             rem = number % 10;
             arr[i] = rem;
@@ -69,7 +69,7 @@ public class NumberGame {
                 long endTime=System.currentTimeMillis();
                 if (guessNumber >= 100 && guessNumber <= 999)
                     if((endTime-startTime)<=60000)
-                        guess = guessTheGame(guessNumber, arr);
+                        guess = guessTheGame(guessNumber, arr,generatedNumber);
                     else {
                         System.out.println("Time out...Please read above rules.");
                         guess=false;
@@ -77,6 +77,11 @@ public class NumberGame {
                 else
                     System.out.println("Please Enter a three digit number.");
             }
+            else {
+                System.out.println("You are out of steps... The guessed number is: " + generatedNumber);
+                guess=false;
+            }
+
         }
         System.out.println("the number of guesses made: " + count);
     }
