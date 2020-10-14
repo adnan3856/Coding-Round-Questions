@@ -10,7 +10,8 @@ public class NumberGame {
         System.out.println("4.Maximum guesses that would be provided will be 30");
         System.out.println("5.HAPPY GUESSING... ;)");
     }
-    
+   
+
     public static boolean guessTheGame(int guess,int[] arr,int num) {
         int guessRem, i = 2;
         int[] guessArray = new int[3];
@@ -45,7 +46,8 @@ public class NumberGame {
         }
         return runAgain;
     }
-    
+
+
     public static void main(String[] args) {
         Scanner scan = new Scanner((System.in));
         int min = 100, max = 999, i = 2, rem, count = 0;
@@ -85,4 +87,5 @@ public class NumberGame {
         }
         System.out.println("the number of guesses made: " + count);
     }
+
 }
