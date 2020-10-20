@@ -1,18 +1,18 @@
-numOfHoursWorked
-basePay
-inHandSalary = Base Pay + FlexiblePay + Bonus - IncomeTax
-basepay
-FlexiblePay
-	basepay	< 40 K
-		flexipay = 0
-	basepay > 40K and < 50K
-		flexipay = 30% of Basepay
-	basepay > 50K and < 60K
-		flexipay = 40% of basepay
-	basepay > 60K
-		flexipay = 50% of basepay
-Bonus
-	hours < 140
+-numOfHoursWorked
+-basePay
+-inHandSalary = Base Pay + FlexiblePay + Bonus - IncomeTax
+-basepay
+-FlexiblePay
+-	basepay	< 40 K
+-		flexipay = 0
+-	basepay > 40K and < 50K
+-		flexipay = 30% of Basepay
+-	basepay > 50K and < 60K
+-		flexipay = 40% of basepay
+-	basepay > 60K
+-		flexipay = 50% of basepay
+-Bonus
+-	hours < 140
 		bonus = 0
 	140 < hours > 150
 		bonus = 10% basepay * hours_eligible
